@@ -1,0 +1,36 @@
+<title>About YTPS Live</title>
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div style="background-color: #1b1b19;">
+        <h1 class="middle_attraction">YTPS LIVE 🚀</h1>
+        <p class="sub_heading_white">YTPS into a website</p>
+        <div>
+            <form action="{{ url_for("search_temp")}}" method="post" style="padding-left: 20%;">
+                <input type="text" id="ytsearch" name="ytsearch" placeholder="Search YTPS" style="width: 60%;">
+        </div>
+        <div style="margin-left: 8%; margin-right: 8%;" id="about">
+            <p class="content_white"><a href="" class="link_white">YTPS</a> stands for Youtube Terminal Play and Search. It is a Beautiful CLI I wrote in python whcih utilizes <a href="" class="link_white">youtube-search</a> and the <a href="" class="link_white">youtube-search-python</a> modules to scrap youtube and play it locally. I was learning flask, so I thought of implementing this into a smalll website. All the backend is written in python and is completly open source. Sorry for the goofy styling. I am not very good with css.</p>
+        </div>
+        <!-- <div style="text-align: center; padding-top: 12px; padding-bottom: 12px;">
+            <a href="https://media.giphy.com/media/U23WekMlGy6cImpMim/giphy.mp4?cid=ecf05e4717e51o6x16j8thbwr4hqnl41j8hfmocgr7k4dad4&rid=giphy.mp4&ct=g"><img src="{{ url_for('static',filename='assets/images/friends_new_information.gif') }}" alt="" class="img"></a>
+        </div> -->
+        <div style="margin-left: 8%; margin-right: 8%;" id="usage">
+            <p class="content_white"> I am still learning flask and if I learn any skill which I can use in this, I will implement it. For now, you can only see the results without the involvment of youtube at all. You have the option to play the video in the ytps web play, but it is still in beta, so expect bugs and if you find any, report them to <a href="https://github.com/newtoallofthis123/ytpsLive/issues" class="link_white">issues</a>. In the future I plan of implementing a local in built video player. If you like this project and hope to contribute to it, clone the <a href="" class="link_white">github</a> repository and send me a pull request. Any help is appreciated.</p>
+        </div>
+        <div style="text-align: center;" id="future">
+            <p class="sub_heading_white"><u>Future Goals for the Project</u></p>
+            <ul>
+                <li class="content_white">Improve Local Player</li>
+                <li class="content_white">Provide Search suggestions</li>
+                <li class="content_white">Make Backend faster</li>
+                <li class="content_white">Cross Platform Support and Responsive Design 😊</li>
+            </ul>
+        </div>
+        <hr style="margin-top: 12px;">
+        <div style="margin-left: 8%; margin-right: 8%; padding-bottom: 12px;">
+            <p class="content_white">If you have any issues or want to give on advice on any ascept of the project, legal or otherwise, please <a href="mailto:noobscience123@gmail.com" class="link_white">email</a> me or you can always reach me on <a href="https://matrix.to/#/@noobscience_is_new:matrix.org" class="link_white">matrix</a>. Hope you enjoy a almost youtube free youtube experince. 😄</p>
+        </div>
+    </div>
+{% endblock %}

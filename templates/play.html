@@ -1,0 +1,41 @@
+<title>YTPS: {{url_info["title"]}}</title>
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div style="background-color: #1b1b19;">
+        <div class="div_features">
+            <div class="div_right" style="padding-top: 48px;">
+                <video width="900" height="480" autoplay controls>
+                    <source src="{{ url_stream }}" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="div_left" style="padding-top: 48px;">
+                {% set video_title = url_info['title'] %}
+                <h1 class="title_2", style="color: #ecece3;">{{ url_info["title"] }}</h1>
+                <div style="margin-top: 12px; padding-left: 12px;">
+                    <a href="{{ url_info["channel_link"] }}" class="link_white" target="_blank">{{ url_info["channel"] }}</a>
+                    <p class="content_white">Views: {{ url_info["view_count"] }}</p>
+                </div>
+                <div style="text-align: center; display:list-item; padding-top: 36px;">
+                    {% set youtube_embed_link = 'https://www.youtube-nocookie.com/embed/' + url_id %}
+                    {% set piped_link = 'https://piped.kavin.rocks/watch?v=' + url_id %}
+                    <button class="btn_normal"><a href="{{ url_info["url"] }}" target="_blank" class="btn_link">Watch on Youtube</a></button>
+                    <button class="btn_normal"><a href="{{ youtube_embed_link }}" target="_blank" class="btn_link">Watch Youtube Embeded</a></button>
+                    <button class="btn_normal"><a href="{{ piped_link }}" target="_blank" class="btn_link">Watch on Piped</a></button>
+                    <!-- <button class="btn_normal"><a href="{{ url_stream }}" target="_blank" class="btn_link">Download Video</a></button> -->
+                    <!-- <button class="btn_normal"><a href="{{ url_audio_stream }}" target="_blank" class="btn_link">Download Audio Only</a></button> -->
+                </div>
+                <p class="content_white" style="color: rgb(233, 34, 34); text-align: center; padding-top: 20px; font-size: 22px;">Video is the exclusive property of Youtube</p>
+                <div style="margin-top: 36px; text-align: center; padding-top: 12px; padding-bottom: 12px; background-color: rgba(83, 74, 66, 0.658);">
+                    <a href="https://newtoallofthis123.github.io/About" class="link_white">By NoobScience</a>
+                </div>
+            </div>
+        </div>
+        <h2 class="sub_heading_white" style="color: rgb(231, 52, 52);">Disclaimer: </h2>
+        <p class="content_white" style="margin-left: 12px; margin-right: 12px;">Please Do Not Download the Video as it may get me and you in legal trobule with YouTube. If you want to download Youtube Videos, look into <a href="" class="link_white">youtube-dl</a>. It has far more options. This site and it's back end is open source but <u><i>the videos and video assets this site shows are the exclusive property of youtube</i></u>. Please act responsibly.</p>
+        <h2 class="sub_heading_white">Description: </h2>
+        <p class="content_white" style="margin-left: 12px; margin-right: 12px;">{{ url_info["description"] }}</p>
+    </div>
+{% endblock %}
